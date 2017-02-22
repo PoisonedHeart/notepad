@@ -8,12 +8,16 @@ class Link < Post
     #Добавим пока пустую
     @url =''
   end
-
+#Каждый класс знает как прочитать себя из консоли
   def read_from_console
-
+    puts "Введите ссылку"
+    @url = STDIN.gets.chomp
+    puts "Что это за ссылка?"
+    @text = STDIN.gets.chomp
   end
-
+#И как преобразовать себя в массив строк, готовых для записи в файл.
   def to_string
-
+    time_string = "Создано: #{@created_at.strftime("%Y.%m.%d, %H:%M:%S") \ n \ r \ n \ r}"
+    return [@url, @text, time_string]
   end
 end
