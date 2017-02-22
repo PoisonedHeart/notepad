@@ -16,8 +16,8 @@ class Link < Post
     @text = STDIN.gets.chomp
   end
 #И как преобразовать себя в массив строк, готовых для записи в файл.
-  def to_string
-    time_string = "Создано: #{@created_at.strftime("%Y.%m.%d, %H:%M:%S") \ n \ r \ n \ r}"
+  def to_strings
+    time_string = "Создано: #{@created_at.strftime("%Y.%m.%d, %H:%M:%S")} \n\r \n\r "
     return [@url, @text, time_string]
   end
 end

@@ -16,8 +16,8 @@ class Memo < Post
   end
 
   def to_strings
-    time_string = "Создано: #{@created_at.strftime("%Y.%m.%d, %H:%M:%S") \ n \ r \ n \ r}"
-    #Метод unshift добавляет в начало массива строчку time_string
+    time_string = "Создано: #{@created_at.strftime("%Y.%m.%d, %H:%M:%S")} \n\r \n\r "
+    #Метод unshift добавляет в начало массива  строчку time_string
     return @text.unshift(time_string)
   end
 end

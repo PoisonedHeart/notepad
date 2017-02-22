@@ -5,14 +5,14 @@ class Post
     [Memo, Link, Task]
   end
 
-  def self.create(tupe_index)
+  def self.create(type_index)
     return post_types[type_index].new
   end
 
 
   def initialize
     #Базовые поля
-    @created_at =Time.now
+    @created_at = Time.now
     @text = nil
   end
 
@@ -27,11 +27,11 @@ class Post
 
 #Класс Post умеет себя сохранять в файл
   def save
-    file = File.new (file_path, "w:UTF-8")
+    file = File.new(file_path, "w:UTF-8")
     for item in to_strings do
       file.puts(item)
     end
-    file close
+    file.close
   end
 
 #Знает в какой файл он будет себя сохранять
